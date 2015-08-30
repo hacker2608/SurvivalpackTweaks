@@ -19,7 +19,7 @@ public class SurvivalpackTweaks {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-        System.nanoTime();
+
     }
 
     @Mod.EventHandler
