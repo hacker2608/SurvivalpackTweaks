@@ -15,10 +15,11 @@ public class configHandler {
     public static void initConfig(File configFile) {
         if(config == null) {
             config = new Configuration(configFile);
+            loadConfig();
         }
     }
 
-    public static void loadConfig() {
+    private static void loadConfig() {
         value = config.getInt("value", Configuration.CATEGORY_GENERAL, 10, 1, 20, "A test value.");
         if(config.hasChanged()) {
             config.save();
@@ -26,8 +27,9 @@ public class configHandler {
     }
 
     @SubscribeEvent
-    public void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent e) {
-        if(e.modID.equalsIgnoreCase(Reference.MOD_ID)) {
+    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.modID.equalsIgnoreCase(Reference.MOD_ID))
+        {
             loadConfig();
         }
     }
