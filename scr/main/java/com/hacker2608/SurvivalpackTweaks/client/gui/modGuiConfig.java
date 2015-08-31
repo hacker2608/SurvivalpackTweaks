@@ -11,6 +11,7 @@ import net.minecraftforge.common.config.Configuration;
 
 public class modGuiConfig extends GuiConfig{
 
+    @SuppressWarnings("unchecked")
     public modGuiConfig(GuiScreen guiScreen) {
         super(
                 guiScreen,
