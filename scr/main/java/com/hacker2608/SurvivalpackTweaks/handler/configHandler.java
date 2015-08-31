@@ -19,15 +19,9 @@ public class configHandler {
     }
 
     public static void loadConfig() {
-        try {
-            config.load();
-            value = config.getInt("value", Configuration.CATEGORY_GENERAL, 10, 1, 20, "A test value.");
-        } catch(Exception e) {
-            e.printStackTrace();
-        } finally {
-            if(config.hasChanged()) {
-                config.save();
-            }
+        value = config.getInt("value", Configuration.CATEGORY_GENERAL, 10, 1, 20, "A test value.");
+        if(config.hasChanged()) {
+            config.save();
         }
     }
 
