@@ -1,7 +1,9 @@
 package com.hacker2608.SurvivalpackTweaks;
 
+import com.hacker2608.SurvivalpackTweaks.handler.configHandler;
 import com.hacker2608.SurvivalpackTweaks.proxy.IProxy;
 import com.hacker2608.SurvivalpackTweaks.reference.Reference;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -19,7 +21,7 @@ public class SurvivalpackTweaks {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-
+        configHandler.initConfig(e.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
